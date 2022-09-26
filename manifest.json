@@ -1,0 +1,41 @@
+{
+    "author": "Subhra Das Gupta",
+    "background": {
+        "page": "background.html",
+        "persistent":true
+    },
+    "browser_action": {
+        "default_icon": {
+            "16": "icon.png"
+        }
+    },
+    "commands": {
+        "toggle-monitoring": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+E",
+                "mac": "Command+Shift+E"
+            },
+            "description": "Toggle monitoring"
+        }
+    },
+    "description": "XDM integration module for Firefox and Chromimum based browsers",
+    "icons": {
+        "48": "icon.png"
+    },
+    "manifest_version": 2,
+    "minimum_edge_version": "33.14281.1000.0",
+    "name": "XDM Browser Monitor",
+    "permissions": [
+        "tabs",
+        "cookies",
+        "contextMenus",
+        "webRequest",
+        "webRequestBlocking",
+        "*://*/*"
+    ],
+    "version": "1.4",
+    "-ms-preload": {
+        "backgroundScript": "backgroundScriptsAPIBridge.js",
+        "contentScript": "contentScriptsAPIBridge.js"
+    }
+}
